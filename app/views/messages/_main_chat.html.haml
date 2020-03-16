@@ -1,0 +1,35 @@
+.main
+  .main__header
+    .main__header--left
+      test
+      .main__header--left-bottom
+        Member : masa
+    .main__header--right
+      = link_to "#", class: "main__header--right-edit" do
+        edit
+  .main__contents
+    .main__contents--top
+      .main__contents--top-left
+        masa
+      .main__contents--top-right
+        2019/11/20(wed) 17:43:01 
+    .main__contents--middle
+      おはよう
+    .main__contents--bottom
+      .main__contents--bottom-left
+        masa
+      .main__contents--bottom-right
+        2019/11/20(wed) 17:43:01 
+    .main__contents--chat
+      今日の夜から雨
+  .main__footer
+    .main__footer--left
+      .main__footer--left-text
+        text a message
+        .main__footer--left-text-image
+          %label{class: "input-box__image"}
+            = icon('fas', 'image')
+            %input{type: "file", class: "main__footer--left-text-image-file"}
+    .main__footer--right
+      = link_to "#", class: "main__footer--right-send" do
+        Send
