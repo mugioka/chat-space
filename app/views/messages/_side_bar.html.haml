@@ -4,13 +4,15 @@
       %h3.side__header--content-left
         = current_user.name
       .side__header--content-right
-        = link_to "#", class: "side__header--content-right-btn" do
+        = link_to new_group_path, class: "side__header--content-right-btn" do
           = icon('far fa-edit', class: "side_header--content-right-btn-icon")
         = link_to  edit_user_path(current_user), class: "side__header--content-right-btn" do
           = icon("fa fa-cog", class: "side_header--content-right-btn-icon-right")
   .side__contents
     .side__contents--main
-      .side__contents--main-top
-        techcamp
-      .side__contents--main-bottom 
-        まだメッセージがありません。
+      - current_user.groups.each do |group|
+        .side__contents--main-top
+          = link_to '#' do
+            = group.name
+        .side__contents--main-bottom 
+          メッセージはまだありません。
