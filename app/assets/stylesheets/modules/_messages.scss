@@ -45,6 +45,7 @@ $btncolor:  #38aef0;
     background-color: #2f3e51;
     padding: 0 20px;
     color: $whitecolor;
+    overflow: scroll;
     &-message {
       padding: 20px 0 40px;
       &-name {
@@ -101,6 +102,7 @@ $btncolor:  #38aef0;
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding-left: 40px;
+    overflow: scroll;
     .user-content {
       display: flex;
       padding: 32px 0 12px;
@@ -116,6 +118,7 @@ $btncolor:  #38aef0;
     .text-message {
       font-size: 14px;
       color: #434A54;
+      overflow: scroll;
     }
   }
   .form {
