@@ -11,7 +11,9 @@ $(function(){
                   </div>
                   <div class="text-message">
                     ${message.content}
-                    ${message.image}
+                    <div class="image-tag">
+                      ${message.image}
+                    </div>
                   </div>`
       return html;
     } else {
