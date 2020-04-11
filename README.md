@@ -55,7 +55,7 @@ Things you may want to cover:
 - has_many :comments
 - has_one  :acount
 
-## acountテーブル
+## acountsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -72,14 +72,14 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|name|string|null, false, add_index :items, :name|
-|status|string|null, false, add_index :items, :status|
-|size|string|null, false, add_index :items, :size|
-|shipping_charges|string|null, false|
-|delivery_method|string|null, false|
-|shipping_area|string|null, false|
-|days_to_ship|string|null, fasle|
-|price|integer|null, false, add_index :items, :price|
+|name|string|null: false, add_index :items, :name|
+|status|string|null: false, add_index :items, :status|
+|size|string|null: false, add_index :items, :size|
+|shipping_charges|string|null: false|
+|delivery_method|string|null: false|
+|shipping_area|string|null: false|
+|days_to_ship|string|null: fasle|
+|price|integer|null: false, add_index :items, :price|
 
 ### Association
 - belongs_to :user
@@ -118,7 +118,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |item_id|integer|null: false, foreign_key: true|
-|text|text|null, false|
+|text|text|null: false|
 
 ### Association
 
@@ -151,7 +151,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 |paujp_id|string|null: false|
 
 ### Association
