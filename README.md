@@ -22,6 +22,32 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+|last_name|string|null: false|
+|first_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday__day|integer|null: false|
+|address_last_name|string|null: false|
+|address_first_name|string|null: false|
+|address_last_name_kana|string|null: false|
+|address_first_name_kana|string|null: false|
+|address_zip_code|integer|null: false|
+|address_prefectures|string|null: false|
+|address_municipality|string|null: false|
+|address_number|integer|null: false|
+|address_building_name|string|-----|
+|address_phone_number|integer|-----|
+
+
 ### Association
 - has_many :saling_items, -> { where(buyer_id is NULL) }, foreign_key: saler_id,     class_name: item
 - has_many :sold_items, -> { where(buyer_id is not NULL) }, foreign_key: saler_id, class_name: item
