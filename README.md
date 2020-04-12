@@ -22,33 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-## usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|nickname|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
-|last_name|string|null: false|
-|first_name|string|null: false|
-|last_name_kana|string|null: false|
-|first_name_kana|string|null: false|
-|birthday_year|integer|null: false|
-|birthday_month|integer|null: false|
-|birthday__day|integer|null: false|
-|address_last_name|string|null: false|
-|address_first_name|string|null: false|
-|address_last_name_kana|string|null: false|
-|address_first_name_kana|string|null: false|
-|address_zip_code|integer|null: false|
-|address_prefectures|string|null: false|
-|address_municipality|string|null: false|
-|address_number|integer|null: false|
-|address_building_name|string|-----|
-|address_phone_number|integer|-----|
-
-
 ### Association
+- has_many :saling_items, -> { where(buyer_id is NULL) }, foreign_key: saler_id,     class_name: item
+- has_many :sold_items, -> { where(buyer_id is not NULL) }, foreign_key: saler_id, class_name: item
+- has_many :buyed_items, foreign_key: buyer_id, class_name: Item
 - has_many :items
 - has_many :cards
 - has_many :likes
@@ -69,7 +46,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|foreign_key: true|
+|saler_id|integer|foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |name|string|null: false, add_index :items, :name|
@@ -83,6 +61,8 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+- belongs_to :buyer, class_name: User
+- belongs_to :saler, class_name: User
 - belongs_to :category
 - belongs_to :brand
 - has_many   :likes
