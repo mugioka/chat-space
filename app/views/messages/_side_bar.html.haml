@@ -1,18 +1,21 @@
 .side
-  .side__header
-    .side__header--content
-      %h3.side__header--content-left
+.chat-side
+  .side-header
+    .header-name
+      %h3.name-text 
         = current_user.name
-      .side__header--content-right
-        = link_to new_group_path, class: "side__header--content-right-btn" do
-          = icon('far fa-edit', class: "side_header--content-right-btn-icon")
-        = link_to  edit_user_path(current_user), class: "side__header--content-right-btn" do
-          = icon("fa fa-cog", class: "side_header--content-right-btn-icon-right")
-  .side__contents
-    .side__contents--main
-      - current_user.groups.each do |group|
-        .side__contents--main-top
-          = link_to '#' do
+      %ul.icon-list
+        %li.list-left
+          = link_to new_group_path, class: "left-form btn" do
+            = icon("far fa-edit", class: "left-icon")
+        %li.list-right
+          = link_to edit_user_path(current_user.id), class: "right-form btn" do
+            = icon("fas fa-cog", class: "right-icon")
+  .group
+    - current_user.groups.each do |group|
+      .group-message
+        = link_to group_messages_path(group), class: "btn" do
+          .group-message-name
             = group.name
-        .side__contents--main-bottom 
-          メッセージはまだありません。
+          .group-message-text
+            = group.show_last_message
