@@ -1,0 +1,3 @@
+%ul.field__input--category
+        %li
+          = f.select :category, @parents, {}, {id: 'parent_category', name: ""}
